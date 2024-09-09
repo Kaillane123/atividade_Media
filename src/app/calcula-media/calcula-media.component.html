@@ -1,0 +1,81 @@
+
+<div class="container text-center" style="background-color:(245,222,179)
+">
+<div style="color:#228B22				">
+<h1>Calcular Média</h1>
+
+<form>
+<div class="container text-center">
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <div class="col">
+        <div class="p-3">
+            <label class="form-floating" for="b1" >Bim 1</label>
+            <input id="b1" name="b1" type="number" #bim1>
+        </div>
+      </div>
+        
+    <div class="col">
+        <div class="p-3">
+            <label class="form-floating" for="b2">Bim 2</label>
+             <input id="b2" name="b2" type="number" #bim2>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="p-3">
+            <label class="form-floating" for="b3">Bim 3</label>
+        <input id="b3" name="b3" type="number" #bim3>
+        </div>
+      </div>
+    
+    
+
+    <div class="col">
+        <div class="p-3">
+        <label class="form-floating" for="b4">Bim 4</label>
+        <input id="b4" name="b4" type="number" #bim4>
+    </div >
+</div>
+</div>
+        
+        <input class="btn btn-success"type="button" value="Calcular" 
+         (click)="calcularMediaParcial(+bim1.value, 
+                                       +bim2.value,
+                                       +bim3.value,
+                                       +bim4.value)">
+    </div>
+
+</form>
+
+<div>
+<div class="mb-3" *ngIf="mp" >
+    <p>Média = {{mp}}</p>
+    <p>Situação do Aluno={{mostrarSituacao}}</p>
+
+    
+
+    <p></p>
+</div>
+</div>
+
+<br/><br/>
+<form>
+    <div class="container text-center">   
+        <label  class="form-label" for="final" > Nota av. final</label><br>
+    
+
+        <input id="final" name ="final" type="number" #naf>
+        <div class="mb-3">
+            <br>
+            <input class="btn btn-success"type="button" value="Calcular" (click)="CalcularMediaFinal(+naf.value)" >
+            
+            <div class="mb-3" *ngIf="mediaFinal" >
+            <p>Média Final = {{mediaFinal}}</p>
+            <p>Situação final do Aluno={{mostrarSituacaoFinal}}</p>
+        </div>
+        </div>
+    </div>
+</form>
+</div>
+
